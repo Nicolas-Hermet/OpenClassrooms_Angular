@@ -1,3 +1,0 @@
-This is a file that aim to test my git/github config on my windows laptop...
-
-Don't blame me, my boss left me no choice
