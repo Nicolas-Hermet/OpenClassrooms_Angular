@@ -1,20 +1,21 @@
 export class Post {
-	title: string;
-	content: string;
-	liveIts: number;
-	createdAt: Date;
-	constructor(){
-		this.title = '';
-		this.content = '';
-		this.liveIts = 0;
-		this.createdAt = new Date();
-	}
+  title: string;
+  content: string;
+  liveIts: number;
+  createdAt: Date;
 
-	// setTitle(title){
-	// 	this.title = title;
-	// }
+  constructor() {
+    this.title = '';
+    this.content = '';
+    this.liveIts = 0;
+    this.createdAt = new Date();
+  }
 
-	// setTitle(content){
-	// 	this.content = content;
-	// }
+//   setTitle(title){
+//   	this.title = title;
+//   }
+
+//   setTitle(content){
+//   	this.content = content;
+//   }
 }
