@@ -6,12 +6,7 @@
         {{ title }}
       </h1>
       <ul class="list-group">
-        <app-postlist *ngFor='let post of posts'
-                      [postTitle]='post.title'
-                      [postContent]='post.content'
-                      [postLoveIts]='post.loveIts'
-                      [postCreatedAt]='post.created_at'>
-                      </app-postlist>
+        <app-postlist></app-postlist>
       </ul>
     </div>
   </div>
