@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Post } from '../post';
+import { POSTS } from '../mock-posts';
 
 @Component({
   selector: 'app-postlist',
@@ -7,10 +7,8 @@ import { Post } from '../post';
   styleUrls: ['./postlist.component.scss']
 })
 export class PostlistComponent implements OnInit {
-	// @Input() title: string;
-	// @Input() content: string;
-	@Input() monPost: Post;
-
+  monPost = 314;
+  posts =  POSTS;
   constructor() { }
 
   ngOnInit() { }
