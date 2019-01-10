@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { POSTS } from '../mock-posts';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-postlist',
