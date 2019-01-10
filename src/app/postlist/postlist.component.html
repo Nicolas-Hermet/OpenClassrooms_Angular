@@ -2,6 +2,8 @@
     <h2>{{post.title}}</h2>
     <p><strong>{{post.loveIts}}</strong></p>
     <p>Created at : {{post.createdAt | date: 'yMMMMEEEEd ss.SSS'}}</p>
+    <button class='btn btn-success' (click)="onLoveIt(post)">Love It</button>
+    <button class="btn btn-danger" (click)="onDontLoveIt(post)"> Yuuuk </button>
 </li>
 
 <app-postlistitem [post]="selectedPost"></app-postlistitem >

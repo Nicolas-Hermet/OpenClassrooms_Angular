@@ -17,4 +17,12 @@ export class PostlistComponent implements OnInit {
   onSelect(post: Post): void {
     this.selectedPost = post;
   }
+
+  onLoveIt(post: Post): void {
+    post.loveIts += 1;
+  }
+
+  onDontLoveIt(post: Post): void {
+    post.loveIts -= 1;
+  }
 }
