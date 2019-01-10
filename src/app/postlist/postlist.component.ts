@@ -8,10 +8,13 @@ import { Post } from '../post';
   styleUrls: ['./postlist.component.scss']
 })
 export class PostlistComponent implements OnInit {
-  monPost = 314;
+  selectedPost: Post;
   posts =  POSTS;
   constructor() { }
 
   ngOnInit() { }
 
+  onSelect(post: Post): void {
+    this.selectedPost = post;
+  }
 }
