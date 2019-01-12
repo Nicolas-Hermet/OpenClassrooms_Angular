@@ -1,9 +1,9 @@
-<li class="list-group-item" *ngFor='let post of posts' (click)="onSelect(post)">
-    <h2>{{post.title}}</h2>
+<li class="list-group-item" *ngFor='let post of posts'>
+    <h2 (click)="onSelect(post)">{{post.title}}</h2>
     <p><strong>{{post.loveIts}}</strong></p>
-    <p>Created at : {{post.createdAt | date: 'yMMMMEEEEd ss.SSS'}}</p>
+    <p>Created at : {{post.createdAt | date: 'y MMMM EEEE d hh:mm:ss'}}</p>
     <button class='btn btn-success' (click)="onLoveIt(post)">Love It</button>
     <button class="btn btn-danger" (click)="onDontLoveIt(post)"> Yuuuk </button>
 </li>
-
+<br>
 <app-postlistitem [post]="selectedPost"></app-postlistitem >
