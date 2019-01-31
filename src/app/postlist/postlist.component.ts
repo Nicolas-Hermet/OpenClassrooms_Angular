@@ -1,18 +1,31 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { POSTS } from '../models/mock-posts';
 import { Post } from '../models/post';
+import { PostsService } from '../services/posts.service';
+import { Subscription } from 'rxjs';
+import { BlockingProxy } from 'blocking-proxy';
 
 @Component({
   selector: 'app-postlist',
   templateUrl: './postlist.component.html',
   styleUrls: ['./postlist.component.scss']
 })
-export class PostlistComponent implements OnInit {
+export class PostlistComponent implements OnInit, OnDestroy {
   selectedPost: Post;
-  posts =  POSTS;
-  constructor() { }
+  // posts =  POSTS;
+  posts: Post[];
+  postsSubcription: Subscription;
+  constructor(private postsService: PostsService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.postsSubcription = this.postsService.postSubject.subscribe(
+      (posts: Post[]) => {
+        this.posts = posts;
+      }
+    );
+    this.postsService.getPosts();
+    this.postsService.emitPosts();
+  }
 
   onSelect(post: Post): void {
     this.selectedPost = post;
@@ -24,5 +37,9 @@ export class PostlistComponent implements OnInit {
 
   onDontLoveIt(post: Post): void {
     post.loveIts -= 1;
+  }
+
+  ngOnDestroy(): void {
+    this.postsSubcription.unsubscribe();
   }
 }
