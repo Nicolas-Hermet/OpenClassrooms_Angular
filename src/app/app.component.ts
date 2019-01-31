@@ -7,7 +7,7 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Activité d\'Angular pour OpenClassrooms';
+
 
   constructor() {
     const config = {

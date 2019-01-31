@@ -11,6 +11,8 @@ import { BlockingProxy } from 'blocking-proxy';
   styleUrls: ['./postlist.component.scss']
 })
 export class PostlistComponent implements OnInit, OnDestroy {
+  title = 'Activité d\'Angular pour OpenClassrooms';
+
   selectedPost: Post;
   // posts =  POSTS;
   posts: Post[];
