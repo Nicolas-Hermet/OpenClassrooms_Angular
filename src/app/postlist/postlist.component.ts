@@ -1,9 +1,7 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { POSTS } from '../models/mock-posts';
 import { Post } from '../models/post';
 import { PostsService } from '../services/posts.service';
 import { Subscription } from 'rxjs';
-import { BlockingProxy } from 'blocking-proxy';
 
 @Component({
   selector: 'app-postlist',
