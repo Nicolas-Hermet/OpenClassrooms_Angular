@@ -13,10 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
-  {path: 'New', component: NewpostComponent},
-  {path: 'Posts', component: PostlistComponent},
-  {path: '', redirectTo: 'Posts', pathMatch: 'full'},
-  {path: '**', redirectTo: 'Posts'}
+  {path: 'new', component: NewpostComponent},
+  {path: 'posts', component: PostlistComponent},
+  {path: '', redirectTo: 'posts', pathMatch: 'full'},
+  {path: '**', redirectTo: 'posts'}
 ];
 
 @NgModule({
