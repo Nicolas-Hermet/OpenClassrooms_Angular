@@ -33,10 +33,12 @@ export class PostlistComponent implements OnInit, OnDestroy {
 
   onLoveIt(post: Post): void {
     post.loveIts += 1;
+    this.postsService.savePosts();
   }
 
   onDontLoveIt(post: Post): void {
     post.loveIts -= 1;
+    this.postsService.savePosts();
   }
 
   onDeletePost(post: Post): void {
