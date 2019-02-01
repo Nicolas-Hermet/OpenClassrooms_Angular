@@ -3,4 +3,6 @@ export class Post {
   content: string;
   loveIts: number;
   createdAt: number;
+
+  constructor (title: string, content: string) {}
 }

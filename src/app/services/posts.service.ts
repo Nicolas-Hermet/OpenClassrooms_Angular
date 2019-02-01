@@ -46,4 +46,10 @@ export class PostsService {
     this.emitPosts();
   }
 
+  createNewPost(newPost: Post) {
+    this.posts.push(newPost);
+    this.savePosts();
+    this.emitPosts();
+  }
+
 }
