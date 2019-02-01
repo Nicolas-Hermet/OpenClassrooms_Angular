@@ -7,8 +7,10 @@
         <input type="text" class="form-control" id="title" formControlName="title">
       </div>
       <div class="form-group">
-        <label for="content">Auteur</label>
-        <input type="textarea" class="form-control" id="content" formControlName="content">
+        <label for="content">Contenu</label>
+        <textarea id="content"
+                    class="form-control" formControlName="content">
+          </textarea>
       </div>
       <button class="btn btn-success" [disabled]="postForm.invalid" type="submit">Enregistrer</button>
     </form>
