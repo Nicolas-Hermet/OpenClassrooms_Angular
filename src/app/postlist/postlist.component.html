@@ -8,12 +8,13 @@
   <li [ngClass]="{'list-group-item': true,
                 'list-group-item-success': post.loveIts > 0,
                 'list-group-item-danger': post.loveIts < 0 }"
-      *ngFor='let post of posts'>
-      <h2 (click)="onSelect(post)">{{post.title}}</h2>
+      *ngFor='let post of posts; let i=index'>
+      <h2 (click)="onSelect(post)" style="cursor: pointer">{{post.title}}</h2>
       <p>Compteur de Love It : <strong>{{post.loveIts}}</strong></p>
       <p>Created at : {{post.createdAt | date: 'y MMMM EEEE d hh:mm:ss'}}</p>
       <button class='btn btn-success' (click)="onLoveIt(post)">Love It</button>
       <button class="btn btn-danger" (click)="onDontLoveIt(post)"> Yuuuk </button>
+      <button class="btn btn-light" (click)="onDeletePost(post)"> <span class="far fa-trash-alt"></span> </button>
   </li>
   <br>
   <app-postlistitem [post]="selectedPost"></app-postlistitem >

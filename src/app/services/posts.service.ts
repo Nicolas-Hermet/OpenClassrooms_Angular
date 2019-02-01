@@ -25,12 +25,25 @@ export class PostsService {
     firebase.database().ref(`/posts`).on('value', (data) => {
       if (this.posts = data.val()) {
         data.val();
-      } else {
-        this.posts = POSTS;
-        this.savePosts();
-      }
+      } // else {
+      //   this.posts = POSTS;
+      //   this.savePosts();
+      // }
       this.emitPosts();
     });
+  }
+
+  deletePost(post: Post) {
+    const postIndexToDelete = this.posts.findIndex(
+      (postConcerned) => {
+        if (postConcerned === post) {
+          return true;
+        }
+      }
+    );
+    this.posts.splice(postIndexToDelete, 1);
+    this.savePosts();
+    this.emitPosts();
   }
 
 }
