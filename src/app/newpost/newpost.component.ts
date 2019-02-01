@@ -37,6 +37,7 @@ export class NewpostComponent implements OnInit {
     const loveIts = 0;
     const createdAt = Date.now();
     const newPost = new Post(title, content);
+    console.log(newPost);
     newPost.loveIts = loveIts;
     newPost.createdAt = createdAt;
     this.postsService.createNewPost(newPost);
